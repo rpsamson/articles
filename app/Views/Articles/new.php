@@ -1,0 +1,26 @@
+<?= $this->extend('Layouts/default') ?>
+<?= $this->section('title') ?>Artilcles<?= $this->endSection() ?>
+
+<?= $this->section('content') ?>
+<?= anchor('/articles/index', "List") ?>
+
+<?php if (session()->has('errors')) :?>
+  <ul>
+    <?php foreach (session()->errors as $error) :?>
+        <li><span><?= $error ?></span></li>
+    <?php endforeach ?>
+  </ul>
+<?php endif ?>
+
+<?= form_open('/articles/create') ?>
+  <label for="title">Title</label>
+  <input type="text" name="title" value="<?= set_value('title')?>"/>
+
+  <label for="content">Content</label>
+  <textarea  name="content" ><?= set_value('content')?></textarea>
+
+  <button type=submit>Save</button>
+<?= form_close() ?>
+
+<?= $this->endSection() ?>
+
