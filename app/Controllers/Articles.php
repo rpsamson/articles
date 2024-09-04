@@ -65,13 +65,15 @@ class Articles extends BaseController
         $article = $this->getArticleOr404($id);
         $article->fill($this->request->getPost());
 
+        $article->__unset('_method');
+
         if(!$article->hasChanged()) {
             return redirect()->back()
                              ->with('message', 'Nothing to Update');
         }
 
         if($this->model->save($article)) {
-            return redirect()->to('/articles/show/' . $id)
+            return redirect()->to('articles/' . $id)
                              ->with('message', 'Article Saved');
         }
 

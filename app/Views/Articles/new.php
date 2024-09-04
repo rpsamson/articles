@@ -12,7 +12,7 @@
   </ul>
 <?php endif ?>
 
-<?= form_open('/articles/create') ?>
+<?= form_open('/articles') ?>
   <label for="title">Title</label>
   <input type="text" name="title" value="<?= set_value('title')?>"/>
 

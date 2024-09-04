@@ -12,8 +12,9 @@
   </ul>
 <?php endif ?>
 
-<?= form_open('/articles/update/' . $article->id) ?>
-  <label for="title">Title</label>
+<?= form_open('articles/' . $article->id) ?>
+
+  <input type="hidden" name="_method" value="PUT" />
   <input type="text" name="title" value="<?= set_value('title', $article->title)?>"/>
 
   <label for="content">Content</label>

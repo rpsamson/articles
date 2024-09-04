@@ -2,6 +2,7 @@
 <?= $this->section('title') ?>Artilcles<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<h2>Articles</h2>
 <?= anchor('/articles/new', "New") ?>
 <?php foreach ($articles as $article) : ?>
   <div>

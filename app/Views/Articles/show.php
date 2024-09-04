@@ -9,8 +9,9 @@
   <p><?= esc($article->content) ?></p>
 </div>
 
-<?= anchor('/articles/edit/'   . $article->id, 'Edit') ?> | 
-<?= anchor('/articles/delete/' . $article->id, 'Delete') ?>
+<?= anchor(url_to('Articles::edit',   $article->id), 'Edit') ?> | 
+<?= anchor(url_to('Articles::confirmDelete', $article->id), 'Delete') ?> 
+
 
 
 <?= $this->endSection() ?>
