@@ -15,3 +15,4 @@ $routes->get('/', 'Home::index');
 $routes->get('/articles/(:num)/delete', 'Articles::confirmDelete/$1');
 // $routes->delete('/articles/(:num)', 'Articles::delete/$1');
 $routes->resource('articles', ['placeholder' => '(:num)']);
+service('auth')->routes($routes);
