@@ -33,11 +33,7 @@
                         <label for="floatingEmailInput"><?= lang('Auth.email') ?></label>
                     </div>
 
-                    <!-- Username -->
-                    <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="floatingUsernameInput" name="username" inputmode="text" autocomplete="username" placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>" required>
-                        <label for="floatingUsernameInput"><?= lang('Auth.username') ?></label>
-                    </div>
+
 
                     <!-- Password -->
                     <div class="form-floating mb-2">
