@@ -32,6 +32,16 @@
                         <input type="email" class="form-control" id="floatingEmailInput" name="email" inputmode="email" autocomplete="email" placeholder="<?= lang('Auth.email') ?>" value="<?= old('email') ?>" required>
                         <label for="floatingEmailInput"><?= lang('Auth.email') ?></label>
                     </div>
+                    <!-- Firstname -->
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="firstname" name="firstname"  placeholder="<?= lang('Auth.firstname') ?>" value="<?= old('firstname') ?>" required>
+                        <label for="firstname"><?= lang('Auth.firstname') ?></label>
+                    </div>
+                    <!-- Lastname -->
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="lastname" name="lastname"  placeholder="<?= lang('Auth.lastname') ?>" value="<?= old('lastname') ?>" required>
+                        <label for="lastname"><?= lang('Auth.lastname') ?></label>
+                    </div>
 
 
 

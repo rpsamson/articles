@@ -53,6 +53,20 @@ class Validation extends BaseConfig
                 'is_unique[auth_identities.secret]',
             ],
         ],
+        'firstname' => [
+            'label' => 'Auth.firstname',
+            'rules' => [
+                'required',
+                'max_length[128]',
+            ],
+        ],
+        'lastname' => [
+            'label' => 'Auth.lastname',
+            'rules' => [
+                'required',
+                'max_length[128]',
+            ],
+        ],
         'password' => [
             'label' => 'Auth.password',
             'rules' => 'required|max_byte[72]|strong_password[]',
