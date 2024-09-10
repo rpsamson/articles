@@ -16,7 +16,11 @@
      <span><?= session('error') ?></span>
   <?php endif; ?>
 
-
+  <?php if (auth()->loggedIn() ) : ?>
+   <p> Hello <?= auth()->user()->firstname ?> | <?= anchor('logout', 'Logout') ?> </p>
+  <?php else : ?>
+    <p><?= anchor('login', 'Login') ?> </p>
+  <?php endif ?>
   <div>
     <?= $this->renderSection('content') ?>
   </div>
