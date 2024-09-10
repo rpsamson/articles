@@ -16,11 +16,19 @@
      <span><?= session('error') ?></span>
   <?php endif; ?>
 
-  <?php if (auth()->loggedIn() ) : ?>
-   <p> Hello <?= auth()->user()->firstname ?> | <?= anchor('logout', 'Logout') ?> </p>
-  <?php else : ?>
-    <p><?= anchor('login', 'Login') ?> </p>
-  <?php endif ?>
+  
+  <nav>
+      <?= anchor(url_to('/'), 'HOME') ?>  |
+      <?php if (auth()->loggedIn() ) : ?>
+         Hello <?= auth()->user()->firstname ?> |
+
+         <?= anchor(url_to('articles'), 'ARTICLES') ?>  |
+         <?= anchor(url_to('admin/users'), 'USERS') ?>  |
+         <?= anchor(url_to('logout'), 'LOGOUT') ?>  
+      <?php else : ?>
+         <?= anchor(url_to('login'), 'LOGIN') ?> 
+      <?php endif ?>
+  </nav>
   <div>
     <?= $this->renderSection('content') ?>
   </div>

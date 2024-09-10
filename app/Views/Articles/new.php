@@ -2,7 +2,7 @@
 <?= $this->section('title') ?>Artilcles<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<?= anchor('/articles/index', "List") ?>
+<?= anchor('articles', "List") ?>
 
 <?php if (session()->has('errors')) :?>
   <ul>
