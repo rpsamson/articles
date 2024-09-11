@@ -16,7 +16,9 @@ $routes->get('/', 'Home::index');
 service('auth')->routes($routes);
 
 $routes->group("" , ['filter' => 'login'], static function ($routes){
-    $routes->get('/articles/(:num)/delete', 'Articles::confirmDelete/$1');
+    $routes->get ('set-password',  'Password::set');
+    $routes->post('set-password',  'Password::update');
+    $routes->get ('/articles/(:num)/delete', 'Articles::confirmDelete/$1');
     // $routes->delete('/articles/(:num)', 'Articles::delete/$1');
     $routes->resource('articles', ['placeholder' => '(:num)']);
 });

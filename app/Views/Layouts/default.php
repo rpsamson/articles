@@ -22,11 +22,13 @@
       <?php if (auth()->loggedIn() ) : ?>
          Hello <?= auth()->user()->firstname ?> |
 
-         <?= anchor(url_to('articles'), 'ARTICLES') ?>  |
-         <?= anchor(url_to('admin/users'), 'USERS') ?>  |
-         <?= anchor(url_to('logout'), 'LOGOUT') ?>  
+         <?= anchor(url_to('articles'),    'ARTICLES') ?>  |
+         <?php if(auth()->user()->inGroup('admin')) :?>
+             <?= anchor(url_to('admin/users'), 'USERS') ?>  |
+         <?php endif ?>
+         <?= anchor(url_to('logout'),      'LOGOUT') ?>  
       <?php else : ?>
-         <?= anchor(url_to('login'), 'LOGIN') ?> 
+         <?= anchor(url_to('login'),       'LOGIN') ?> 
       <?php endif ?>
   </nav>
   <div>
