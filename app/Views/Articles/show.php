@@ -10,11 +10,11 @@
 </div>
 
 
-<?php if($article->isOwner() || auth()->user()->hasPermission('article.edit')): ?>
+<?php if($article->isOwner() || auth()->user()->can('article.edit')): ?>
   <?= anchor(url_to('Articles::edit',   $article->id), 'Edit') ?> |
 <?php endif ?>
 
-<?php if($article->isOwner() || auth()->user()->hasPermission('article.delete')): ?>
+<?php if($article->isOwner() || auth()->user()->can('article.delete')): ?>
   <?= anchor(url_to('Articles::confirmDelete',   $article->id), 'Delete') ?> 
 <?php endif ?>
 
