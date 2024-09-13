@@ -88,6 +88,18 @@ class Users extends BaseController
         }
         return view('Admin\Views\Users\groups', ['user' => $user]);
     }
+    public function permissions($id)
+    {
+        $user = $this->getUserOr404($id);
+
+        if ($this->request->is('post')) {
+            $permissions = $this->request->getPost('permissions') ?? [];
+            $user->syncPermissions(...$permissions);
+            return redirect()->to("admin/users/$id")
+                             ->with('message', 'User Saved');
+        }
+        return view('Admin\Views\Users\permissions', ['user' => $user]);
+    }
 
    
     private function getUserOr404($id) : User {

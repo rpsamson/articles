@@ -19,6 +19,11 @@
                <?= implode(", " ,$user->getGroups() )?>
                <?= anchor(url_to('\Admin\Controllers\Users::groups' , $user->id ), 'edit') ?>
             </dd>
+            <dt>Member of Permissions:</dt>
+            <dd>
+               <?= implode(", " ,$user->getPermissions() )?>
+               <?= anchor(url_to('\Admin\Controllers\Users::permissions' , $user->id ), 'edit') ?>
+            </dd>
             <dt>Created </dt>
             <dd><?= $user->created_at->humanize() ?></dd>
 

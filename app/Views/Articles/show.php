@@ -9,9 +9,14 @@
   <p><?= esc($article->content) ?></p>
 </div>
 
-<?= anchor(url_to('Articles::edit',   $article->id), 'Edit') ?> | 
-<?= anchor(url_to('Articles::confirmDelete', $article->id), 'Delete') ?> 
 
+<?php if($article->isOwner() || auth()->user()->hasPermission('article.edit')): ?>
+  <?= anchor(url_to('Articles::edit',   $article->id), 'Edit') ?> |
+<?php endif ?>
+
+<?php if($article->isOwner() || auth()->user()->hasPermission('article.delete')): ?>
+  <?= anchor(url_to('Articles::confirmDelete',   $article->id), 'Delete') ?> 
+<?php endif ?>
 
 
 <?= $this->endSection() ?>
