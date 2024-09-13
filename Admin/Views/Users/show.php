@@ -14,6 +14,11 @@
             <dd><?= yesno($user->active) ?></dd>
             <dt>Banned?</dt>
             <dd><?= yesno($user->isBanned()) ?></dd>
+            <dt>Member of Groups:</dt>
+            <dd>
+               <?= implode(", " ,$user->getGroups() )?>
+               <?= anchor(url_to('\Admin\Controllers\Users::groups' , $user->id ), 'edit') ?>
+            </dd>
             <dt>Created </dt>
             <dd><?= $user->created_at->humanize() ?></dd>
 

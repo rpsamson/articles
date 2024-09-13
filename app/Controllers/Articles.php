@@ -19,8 +19,15 @@ class Articles extends BaseController
     //-------------------------------------------------------------
     public function index()
     {
-        $articles = $this->model->findAll();
-        return view('Articles/index', ['articles' => $articles]);
+        $articles = $this->model
+                         ->select('articles.* , users.firstname')
+                         ->join('users', 'users.id = articles.user_id')
+                         ->orderBy('created_at')
+                         ->paginate(3);
+        return view('Articles/index', [
+            'articles' => $articles,
+            'pager'    => $this->model->pager
+        ]);
     }
     //--------------------------------------------------------------
     public function new()

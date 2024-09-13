@@ -75,6 +75,20 @@ class Users extends BaseController
                          ->with('message', 'User Saved');
     }
 
+
+    public function groups($id)
+    {
+        $user = $this->getUserOr404($id);
+
+        if ($this->request->is('post')) {
+            $groups = $this->request->getPost('groups') ?? [];
+            $user->syncGroups(...$groups);
+            return redirect()->to("admin/users/$id")
+                             ->with('message', 'User Saved');
+        }
+        return view('Admin\Views\Users\groups', ['user' => $user]);
+    }
+
    
     private function getUserOr404($id) : User {
 
