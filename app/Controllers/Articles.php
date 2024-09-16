@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Entities\Article;
 use CodeIgniter\HTTP\ResponseInterface;
-use \CodeIgniter\Exceptions\PageNotFoundException ;
+use CodeIgniter\Exceptions\PageNotFoundException ;
 use Exception;
 
 class Articles extends BaseController
