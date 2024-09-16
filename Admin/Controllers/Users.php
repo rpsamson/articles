@@ -37,7 +37,7 @@ class Users extends BaseController
 
     public function edit($id)
     {
-        $user = $this->getArticleOr404($id);
+        $user = $this->getUserOr404($id);
         return view('Admin\Views\Users\edit', ['user' => $user]);
 
     }

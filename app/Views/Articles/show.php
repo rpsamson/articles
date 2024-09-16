@@ -1,3 +1,10 @@
+
+<?php
+/**
+ * @var CodeIgniter\View\View $this
+*/
+?>
+
 <?= $this->extend('Layouts/default') ?>
 <?= $this->section('title') ?>Artilcles<?= $this->endSection() ?>
 
